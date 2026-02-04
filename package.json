@@ -1,0 +1,53 @@
+{
+  "name": "geminidesk-gemini-web-sidebar",
+  "displayName": "GeminiDesk – Gemini Web Sidebar",
+  "description": "Show Gemini Web in a dedicated sidebar while you code.",
+  "version": "0.0.1",
+  "publisher": "shinyanemoto",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:geminidesk.geminiView",
+    "onCommand:geminidesk.openSidebar"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "geminidesk.openSidebar",
+        "title": "Open GeminiDesk Sidebar"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "geminidesk",
+          "title": "GeminiDesk",
+          "icon": "resources/gemini.svg"
+        }
+      ]
+    },
+    "views": {
+      "geminidesk": [
+        {
+          "id": "geminidesk.geminiView",
+          "name": "Gemini"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.87.0",
+    "typescript": "^5.4.5"
+  }
+}
