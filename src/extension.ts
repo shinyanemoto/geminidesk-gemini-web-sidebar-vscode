@@ -39,8 +39,7 @@ class GeminiSidebarProvider implements vscode.WebviewViewProvider {
     this.view = webviewView;
 
     webviewView.webview.options = {
-      enableScripts: true,
-      retainContextWhenHidden: true
+      enableScripts: true
     };
 
     webviewView.webview.html = this.getWebviewHtml(webviewView.webview);
